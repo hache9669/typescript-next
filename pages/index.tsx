@@ -1,8 +1,24 @@
 import React from 'react';
-import Next from 'next';
+import Head from 'next/head';
+import Component from '../components/index';
 
-const Page:Next.NextFC = props => (
-    <div>hello next</div>
-)
+type Props = {
+    title: string;
+}
 
-export default Page;
+class App extends React.Component<Props> {
+    static async getInitialProps(): Promise<Props> {
+        return { title: 'Hello World' };
+    }
+
+    render() {
+        return <>
+            <Head>
+                <title>{this.props.title}</title>
+            </Head>
+            <Component />
+        </>
+    }
+}
+
+export default App;
