@@ -1,12 +1,12 @@
 import React from 'react';
-import Next from 'next';
+import { NextComponentType, NextPageContext } from 'next';
 import styled from 'styled-components';
 
 type Props = {
     className?: string
 }
 
-const Component: Next.NextFC<Props> = props => (
+const Component: NextComponentType<NextPageContext, {}, Props> = props => (
     <div className={props.className}>hello next via component</div>
 )
 

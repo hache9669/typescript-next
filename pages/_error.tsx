@@ -1,5 +1,5 @@
 import React from 'react';
-import { NextContext } from 'next';
+import { NextPageContext  } from 'next';
 import Head from 'next/head';
 
 type Props = {
@@ -11,7 +11,7 @@ type Props = {
  * カスタムエラーページ
  */
 class Error extends React.Component<Props> {
-    static async getInitialProps({ res }: NextContext): Promise<Props> {
+    static async getInitialProps({ res }: NextPageContext ): Promise<Props> {
         return {
             title: `Error: ${res!.statusCode}`,
             errorCode: res!.statusCode!
